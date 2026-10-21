@@ -134,7 +134,7 @@ input:focus{border-color:var(--blue2);box-shadow:0 0 0 3px #278bff20}
   </div>
 </section>
 </main>
-<footer><strong style="color:#d8eaff;letter-spacing:2px">FEKAS FATHERS VENTAS</strong><br>Recargas Free Fire · Atención al cliente<br><span style="font-size:12px">© 2026 Fecas Faders Ventas</span></footer>
+<footer><strong style="color:#d8eaff;letter-spacing:2px">FEKAS FATHERS VENTAS</strong><br>Recargas Free Fire · Atención al cliente<br><span style="font-size:12px">© 2026 Fekas Fathers Ventas</span></footer>
 <script>
 const packages=[
  {diamonds:110,price:1.50},{diamonds:341,price:3.70},{diamonds:572,price:6.00},
@@ -149,7 +149,7 @@ const count=()=>quantities.reduce((s,q)=>s+q,0);
 const diamonds=()=>packages.reduce((s,p,i)=>s+p.diamonds*quantities[i],0);
 function renderProducts(){
  document.getElementById("products").innerHTML=packages.map((p,i)=>`<article class="product ${quantities[i]?'selected':''}">
- <div class="gem">♢</div><div class="amount">${p.diamonds.toLocaleString("en-US")}</div><div class="price">${fmt(p.price)}</div>
+ <div class="gem">💎</div><div class="amount">${p.diamonds.toLocaleString("en-US")}</div><div class="price">${fmt(p.price)}</div>
  <div class="counter"><button aria-label="Quitar ${p.diamonds}" onclick="changeQty(${i},-1)" ${quantities[i]===0?'disabled':''}>−</button><span class="qty">${quantities[i]}</span><button aria-label="Añadir ${p.diamonds}" onclick="changeQty(${i},1)">+</button></div></article>`).join("");
  document.getElementById("grandtotal").textContent=fmt(total());
  document.getElementById("itemcount").textContent=count()+" PAQUETE"+(count()===1?"":"S");
