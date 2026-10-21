@@ -315,6 +315,113 @@ header,
         margin: 8px;
     }
 }
+  /* =========================================
+   FEKAS FATHERS - VIDRIO OSCURO TRANSLUCIDO
+   ========================================= */
+
+/* TARJETAS DE DIAMANTES Y CASILLAS */
+.products > *,
+.product,
+.package-card,
+.diamond-card,
+.product-card,
+.method,
+.pill,
+.trust > *,
+.summary-row,
+.total-row,
+.checkout,
+.cart-summary,
+.checkout-bar,
+.total-bar {
+    background-color: rgba(5, 8, 13, 0.48) !important;
+
+    border: 1.5px solid rgba(0, 0, 0, 0.88);
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.20),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* MENÚ SUPERIOR */
+header,
+.nav,
+.navbar,
+.site-header {
+    background-color: rgba(3, 5, 9, 0.72) !important;
+
+    border-color: rgba(0, 0, 0, 0.92);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* SELECTOR DE MONEDAS */
+.currency {
+    background-color: rgba(3, 5, 9, 0.58) !important;
+
+    border: 1.5px solid rgba(0, 0, 0, 0.88);
+    border-radius: 40px;
+
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+/* BOTONES SECUNDARIOS */
+button:not(.checkout-button):not(.checkout),
+.btn {
+    background-color: rgba(3, 5, 9, 0.52);
+
+    border-color: rgba(0, 0, 0, 0.88);
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+/* CONSERVAR LOS DETALLES AZULES */
+.currency button.active,
+.method.selected,
+.product.selected {
+    border-color: var(--blue2) !important;
+}
+
+/* CONSERVAR EL AZUL DEL BOTON PRINCIPAL */
+.checkout-button,
+button.checkout {
+    background: linear-gradient(
+        135deg,
+        #0788f9,
+        #49c5ff
+    ) !important;
+
+    color: #03101d;
+    border: 2px solid #05070a;
+}
+
+/* PRECIOS Y CANTIDADES */
+.price,
+.amount {
+    position: relative;
+    z-index: 1;
+}
+
+/* EFECTO AL PASAR EL CURSOR */
+.products > *:hover,
+.product:hover,
+.package-card:hover,
+.diamond-card:hover,
+.product-card:hover {
+    background-color: rgba(5, 8, 13, 0.58) !important;
+
+    border-color: var(--blue2);
+
+    box-shadow:
+        0 10px 28px rgba(0, 0, 0, 0.28),
+        0 0 12px rgba(39, 139, 255, 0.12);
+}
   
 </style>
 </head>
