@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#05070c">
+<title>Fecas Faders Ventas | Diamantes Free Fire</title>
+<style>
+:root{
+  --bg:#05070c; --panel:rgba(13,17,27,.94); --panel2:#0a0d15;
+  --text:#f5f7ff; --muted:#9ba7bd; --blue:#278bff; --blue2:#64c7ff;
+  --edge:rgba(48,135,255,.36); --glow:rgba(39,139,255,.20);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at 50% 35%,#0c1a32 0%,#05070c 54%,#020307 100%);color:var(--text);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:.2px}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.28;background-image:linear-gradient(rgba(49,126,220,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(49,126,220,.12) 1px,transparent 1px);background-size:46px 46px;mask-image:linear-gradient(to bottom,black,transparent 90%);z-index:-1}
+button,input{font:inherit}button{cursor:pointer}
+header{position:sticky;top:0;z-index:10;background:rgba(3,5,10,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--edge)}
+.nav{max-width:1100px;margin:auto;padding:15px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:1.5px;color:var(--blue2);font-size:clamp(15px,3vw,21px)}
+.logo{width:43px;height:43px;border:2px solid var(--blue);border-radius:13px;display:grid;place-items:center;color:var(--blue2);font-size:24px;box-shadow:0 0 22px var(--glow)}
+.navlinks{display:flex;gap:8px}.navlinks a{color:var(--text);text-decoration:none;border:1px solid var(--edge);border-radius:12px;padding:10px 13px;font-size:13px}
+main{max-width:1100px;margin:auto;padding:30px 18px 60px}
+.hero{text-align:center;padding:40px 0 34px}
+.kicker{font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--blue2);font-weight:800}
+h1{font-size:clamp(30px,6vw,54px);line-height:1.08;margin:16px 0;background:linear-gradient(100deg,#fff,#69c8ff 55%,#258aff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--muted);font-size:clamp(15px,2.5vw,19px);line-height:1.7;max-width:720px;margin:0 auto}
+.trust{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin:26px 0 18px}
+.pill{border:1px solid var(--edge);background:rgba(12,25,45,.72);border-radius:99px;padding:10px 15px;font-size:12px;letter-spacing:1.2px;font-weight:800;color:#d8eaff}
+.section-title{text-align:center;text-transform:uppercase;letter-spacing:2px;font-size:clamp(22px,4vw,30px);margin:36px 0 8px}
+.section-title span{color:var(--blue2)}.sub{text-align:center;color:var(--muted);margin:0 auto 25px;line-height:1.6}
+.currency{display:flex;justify-content:center;gap:4px;background:#03050a;border:1px solid var(--edge);border-radius:99px;padding:5px;width:max-content;margin:0 auto 24px}
+.currency button{border:0;background:transparent;color:#aab7cd;padding:9px 15px;border-radius:99px;font-weight:800;letter-spacing:1px}
+.currency button.active{background:linear-gradient(120deg,#1377ed,#53c4ff);color:#02101f}
+.products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.product{position:relative;text-align:center;background:linear-gradient(145deg,rgba(17,23,36,.98),rgba(7,9,15,.98));border:1px solid var(--edge);border-radius:20px;padding:20px 10px 16px;box-shadow:inset 0 1px rgba(255,255,255,.03);transition:.18s}
+.product.selected{border-color:var(--blue2);box-shadow:0 0 0 1px var(--blue),0 0 24px var(--glow)}
+.gem{font-size:32px;line-height:1.2;color:var(--blue2);filter:drop-shadow(0 0 10px var(--glow))}
+.amount{font-size:25px;font-weight:950;margin:7px 0 3px}.price{font-size:22px;font-weight:900;color:var(--blue2)}
+.counter{display:flex;justify-content:center;align-items:center;gap:13px;margin-top:13px}
+.counter button{width:36px;height:36px;border-radius:50%;border:1px solid var(--edge);background:#0a1424;color:var(--blue2);font-size:23px;line-height:1}
+.counter button:disabled{opacity:.3;cursor:not-allowed}
+.qty{min-width:16px;font-weight:900}
+.orderbar{position:sticky;bottom:10px;z-index:5;margin:22px auto 0;max-width:680px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;border:1px solid var(--edge);border-radius:18px;background:rgba(4,7,13,.94);backdrop-filter:blur(16px);box-shadow:0 10px 35px #0008}
+.orderbar small{display:block;color:var(--muted);font-size:11px;letter-spacing:1px}.total{font-size:22px;font-weight:950;color:var(--blue2)}
+.primary{border:0;border-radius:12px;padding:14px 20px;background:linear-gradient(110deg,#1477ec,#5bc7ff);color:#03101f;font-weight:950;letter-spacing:1.5px;box-shadow:0 5px 22px var(--glow)}
+.primary:active{transform:scale(.99)}
+.steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:30px 0}
+.step,.checkout{background:var(--panel);border:1px solid var(--edge);border-radius:22px;padding:24px}
+.stepnum{font-size:42px;font-weight:950;color:var(--blue2);line-height:1}
+.step h3{letter-spacing:2px;font-size:16px}.step p{color:var(--muted);line-height:1.6;margin-bottom:0}
+footer{border-top:1px solid var(--edge);padding:28px 18px 42px;color:var(--muted);text-align:center;line-height:1.8}
+.checkout-wrap{display:none;margin:26px auto 0;max-width:760px;scroll-margin-top:90px}
+.checkout-wrap.show{display:block;animation:appear .25s ease}
+@keyframes appear{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.checkout h2{margin:0 0 22px;letter-spacing:2px}
+.summaryrow{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid #25334a;color:#e8f3ff}
+.summaryrow .muted{color:var(--muted)}
+.totalrow{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:17px 0}
+.totalbadge{background:rgba(39,139,255,.14);border:1px solid var(--edge);border-radius:99px;padding:10px 17px;color:var(--blue2);font-size:22px;font-weight:950}
+.textlink{background:none;border:0;color:var(--blue2);padding:4px 0 18px}
+label{display:block;color:#aebbd0;font-size:12px;letter-spacing:2px;font-weight:850;margin:20px 0 8px}
+input{width:100%;background:#05070d;border:1px solid #29364c;border-radius:12px;padding:15px;color:white;outline:none}
+input:focus{border-color:var(--blue2);box-shadow:0 0 0 3px #278bff20}
+.help{font-size:13px;color:var(--muted);line-height:1.5;margin:7px 0}
+.verify{width:100%;margin-top:10px}
+.methods{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:10px}
+.method{min-height:106px;background:#070a12;border:1px solid #27344a;border-radius:15px;color:white;padding:15px 8px;font-weight:850;letter-spacing:1px}
+.method .methodicon{font-size:25px;color:var(--blue2);display:block;margin-bottom:8px}
+.method.selected{border-color:var(--blue2);background:rgba(24,105,202,.16);box-shadow:0 0 0 1px var(--blue)}
+.status{display:none;margin-top:12px;padding:12px;border-radius:12px;background:#0c1e31;border:1px solid var(--edge);color:#bfe5ff;line-height:1.5}
+.status.show{display:block}
+.demo-note{margin-top:16px;border-left:3px solid var(--blue2);padding:10px 12px;color:var(--muted);font-size:12px;line-height:1.55}
+.hidden{display:none!important}
+@media(min-width:760px){.products{grid-template-columns:repeat(3,minmax(0,1fr))}.checkout{padding:30px}}
+@media(max-width:540px){.nav{padding:12px}.navlinks a{padding:9px;font-size:11px}.logo{width:38px;height:38px}.hero{padding-top:26px}.products{gap:8px}.product{padding:16px 5px 12px;border-radius:16px}.amount{font-size:21px}.price{font-size:18px}.gem{font-size:28px}.counter{gap:8px}.counter button{width:31px;height:31px}.steps{grid-template-columns:1fr}.step{padding:21px}.orderbar{bottom:6px;padding:10px}.primary{padding:12px 13px;font-size:12px}.total{font-size:19px}.checkout{padding:18px}.methods{gap:8px}.method{font-size:12px}}
+</style>
+</head>
+<body>
+<header><div class="nav">
+  <div class="brand"><div class="logo">◇</div><span>FECAS FADERS<br><small style="font-size:10px;letter-spacing:3px;color:#b8c7df">VENTAS</small></span></div>
+  <nav class="navlinks"><a href="#paquetes">Paquetes</a><a href="#como">Cómo funciona</a></nav>
+</div></header>
+<main>
+<section class="hero">
+  <div class="kicker">✦ RECARGA PREMIUM ✦</div>
+  <h1>Diamantes Free Fire</h1>
+  <p class="lead">Recarga rápida, compra sencilla y atención al cliente. Elige tu paquete y continúa con los datos de tu cuenta.</p>
+  <div class="trust"><div class="pill">◇ COMPRA SEGURA</div><div class="pill">↯ PROCESO SENCILLO</div><div class="pill">◷ SOPORTE</div><div class="pill">▣ VARIOS MÉTODOS DE PAGO</div></div>
+</section>
+<section id="paquetes">
+  <h2 class="section-title">Selecciona tu <span>recarga</span></h2>
+  <p class="sub">Toca un paquete para añadirlo. Puedes combinar varios y elegir cuántos de cada uno.</p>
+  <div class="currency" aria-label="Moneda"><button class="active" data-currency="USD">USD</button><button data-currency="MXN">MXN</button><button data-currency="GTQ">GTQ</button><button data-currency="COP">COP</button></div>
+  <div class="products" id="products"></div>
+  <div class="orderbar"><div><small id="itemcount">0 PAQUETES</small><div class="total" id="grandtotal">$ 0.00</div></div><button class="primary" id="buy">CONTINUAR A COMPRAR →</button></div>
+</section>
+<section id="como">
+  <h2 class="section-title">Cómo <span>funciona</span></h2>
+  <div class="steps">
+    <article class="step"><div class="stepnum">01</div><h3>ELIGE PAQUETES</h3><p>Añade los paquetes que quieras y ajusta las cantidades.</p></article>
+    <article class="step"><div class="stepnum">02</div><h3>INGRESA TU ID</h3><p>Escribe tu ID de jugador para continuar con el pedido.</p></article>
+    <article class="step"><div class="stepnum">03</div><h3>ELIGE CÓMO PAGAR</h3><p>Selecciona uno de los métodos de pago que estén habilitados en la tienda.</p></article>
+    <article class="step"><div class="stepnum">04</div><h3>CONFIRMACIÓN</h3><p>Recibirás la confirmación por correo cuando el pago se haya verificado.</p></article>
+  </div>
+</section>
+<section class="checkout-wrap" id="checkout">
+  <div class="checkout">
+    <h2>TU PEDIDO</h2><div id="summary"></div>
+    <div class="totalrow"><strong id="totaldiamonds">TOTAL · 0 DIAMANTES</strong><div class="totalbadge" id="checkouttotal">$ 0.00</div></div>
+    <button class="textlink" id="editorder">← Cambiar paquetes o cantidades</button>
+    <form id="orderform">
+      <label for="playerid">ID DE JUGADOR *</label><input id="playerid" name="playerid" inputmode="numeric" placeholder="Ej: 1234567890" required minlength="5">
+      <button class="primary verify" type="button" id="verify">VERIFICAR ID</button><p class="help">Vista de demostración: la verificación real requiere conexión con un servicio autorizado.</p>
+      <label for="email">CORREO ELECTRÓNICO *</label><input id="email" name="email" type="email" placeholder="tu@correo.com" required>
+      <p class="help">Aquí recibirás la confirmación de tu pedido.</p>
+      <label for="name">NOMBRE (OPCIONAL)</label><input id="name" name="name" autocomplete="name" placeholder="Tu nombre">
+      <label>PUNTOS ACUMULADOS</label><button class="primary" type="button" id="points">USAR MIS PUNTOS</button><p class="help" id="pointshelp">Los puntos reales necesitan una cuenta de cliente y una base de datos.</p>
+      <hr style="border:0;border-top:1px solid #29364a;margin:24px 0">
+      <h2 style="font-size:22px;margin-bottom:12px">MÉTODO DE PAGO</h2>
+      <div class="methods">
+        <button type="button" class="method" data-method="Tarjeta"><span class="methodicon">▣</span>TARJETA</button>
+        <button type="button" class="method" data-method="Transferencia bancaria"><span class="methodicon">▤</span>TRANSFERENCIA</button>
+        <button type="button" class="method" data-method="Pago móvil"><span class="methodicon">▧</span>PAGO MÓVIL</button>
+        <button type="button" class="method" data-method="Otro método"><span class="methodicon">＋</span>OTRO MÉTODO</button>
+      </div>
+      <input type="hidden" id="payment" required>
+      <div id="paymentstatus" class="status"></div>
+      <button class="primary verify" type="submit" style="margin-top:22px">CONTINUAR CON EL PEDIDO →</button>
+      <div id="formstatus" class="status" role="status"></div>
+      <div class="demo-note">Prototipo visual: este botón no cobra ni envía pedidos reales. Antes de publicar la tienda, conecta una pasarela de pago y un sistema seguro para recibir y procesar pedidos. No solicites contraseñas de Free Fire.</div>
+    </form>
+  </div>
+</section>
+</main>
+<footer><strong style="color:#d8eaff;letter-spacing:2px">FECAS FADERS VENTAS</strong><br>Recargas Free Fire · Atención al cliente<br><span style="font-size:12px">© 2026 Fecas Faders Ventas</span></footer>
+<script>
+const packages=[
+ {diamonds:110,price:1.30},{diamonds:341,price:3.20},{diamonds:572,price:5.20},
+ {diamonds:1166,price:10.00},{diamonds:2398,price:19.00},{diamonds:6160,price:45.00}
+];
+const rates={USD:1,MXN:17.2,GTQ:7.7,COP:4100};
+const symbols={USD:"$",MXN:"MX$",GTQ:"Q",COP:"$"};
+let currency="USD", quantities=packages.map(()=>0), method="";
+const fmt=n=>symbols[currency]+" "+(n*rates[currency]).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});
+const total=()=>packages.reduce((s,p,i)=>s+p.price*quantities[i],0);
+const count=()=>quantities.reduce((s,q)=>s+q,0);
+const diamonds=()=>packages.reduce((s,p,i)=>s+p.diamonds*quantities[i],0);
+function renderProducts(){
+ document.getElementById("products").innerHTML=packages.map((p,i)=>`<article class="product ${quantities[i]?'selected':''}">
+ <div class="gem">♢</div><div class="amount">${p.diamonds.toLocaleString("en-US")}</div><div class="price">${fmt(p.price)}</div>
+ <div class="counter"><button aria-label="Quitar ${p.diamonds}" onclick="changeQty(${i},-1)" ${quantities[i]===0?'disabled':''}>−</button><span class="qty">${quantities[i]}</span><button aria-label="Añadir ${p.diamonds}" onclick="changeQty(${i},1)">+</button></div></article>`).join("");
+ document.getElementById("grandtotal").textContent=fmt(total());
+ document.getElementById("itemcount").textContent=count()+" PAQUETE"+(count()===1?"":"S");
+}
+function renderSummary(){
+ document.getElementById("summary").innerHTML=packages.map((p,i)=>quantities[i]?`<div class="summaryrow"><span><strong>${quantities[i]}×</strong> &nbsp;${p.diamonds.toLocaleString("en-US")} Diamantes</span><span>${fmt(p.price*quantities[i])}</span></div>`:"").join("");
+ document.getElementById("checkouttotal").textContent=fmt(total());
+ document.getElementById("totaldiamonds").textContent="TOTAL · "+diamonds().toLocaleString("en-US")+" DIAMANTES";
+}
+function changeQty(i,d){quantities[i]=Math.max(0,quantities[i]+d);renderProducts();if(document.getElementById("checkout").classList.contains("show"))renderSummary()}
+document.querySelectorAll("[data-currency]").forEach(b=>b.addEventListener("click",()=>{currency=b.dataset.currency;document.querySelectorAll("[data-currency]").forEach(x=>x.classList.toggle("active",x===b));renderProducts();if(document.getElementById("checkout").classList.contains("show"))renderSummary()}));
+document.getElementById("buy").addEventListener("click",()=>{if(!count()){alert("Primero selecciona al menos un paquete.");return}renderSummary();document.getElementById("checkout").classList.add("show");document.getElementById("checkout").scrollIntoView({behavior:"smooth",block:"start"})});
+document.getElementById("editorder").addEventListener("click",()=>document.getElementById("paquetes").scrollIntoView({behavior:"smooth"}));
+document.getElementById("verify").addEventListener("click",()=>{const id=document.getElementById("playerid").value.trim();const s=document.getElementById("paymentstatus");s.classList.add("show");s.textContent=id.length>=5?"ID ingresado. En la versión real, aquí se consultará al servicio autorizado para confirmar el jugador.":"Escribe primero un ID válido de al menos 5 caracteres.";});
+document.getElementById("points").addEventListener("click",()=>{const s=document.getElementById("paymentstatus");s.classList.add("show");s.textContent="La función de puntos estará disponible cuando se conecte el registro de clientes y su historial de compras.";});
+document.querySelectorAll(".method").forEach(b=>b.addEventListener("click",()=>{method=b.dataset.method;document.getElementById("payment").value=method;document.querySelectorAll(".method").forEach(x=>x.classList.toggle("selected",x===b));const s=document.getElementById("paymentstatus");s.classList.add("show");s.textContent="Método seleccionado: "+method+". En esta demo no se procesa ningún pago."; }));
+document.getElementById("orderform").addEventListener("submit",e=>{e.preventDefault();const s=document.getElementById("formstatus");s.classList.add("show");if(!method){s.textContent="Selecciona un método de pago para continuar.";return}if(!document.getElementById("orderform").reportValidity())return;s.textContent="Formulario de demostración completado. No se ha cobrado ni enviado ningún pedido. Conecta el sistema de pedidos antes de publicar.";});
+renderProducts();
+</script>
+</body>
+</html>
