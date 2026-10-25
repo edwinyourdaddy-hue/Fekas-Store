@@ -576,8 +576,8 @@ const packages=[
  {diamonds:110,price:1.50},{diamonds:341,price:3.70},{diamonds:572,price:6.00},
  {diamonds:1166,price:11.00},{diamonds:2398,price:22.00},{diamonds:6160,price:55.00}
 ];
-const rates={USD:1,MXN:17.2,GTQ:7.7,RD:4100};
-const symbols={USD:"$",MXN:"MX$",GTQ:"Q",RD:"$"};
+const rates={USD:1,MXN:17.2,GTQ:7.7,COP:4100};
+const symbols={USD:"$",MXN:"MX$",GTQ:"Q",COP:"$"};
 let currency="USD", quantities=packages.map(()=>0), method="";
 const fmt=n=>symbols[currency]+" "+(n*rates[currency]).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});
 const total=()=>packages.reduce((s,p,i)=>s+p.price*quantities[i],0);
